@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="class.js"></script>
+<script type="text/javascript" src="game.js"></script>
+<style>
+body,html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: Arial;
+	font-size: 20px
+}
+
+#cr-stage {
+	border: 2px solid black;
+	margin: 5px auto;
+	color: white
+}
+
+.enemy {
+	position: absolute;
+	
+}
+#game {
+border:solid 1px black;
+margin:auto;
+position:relative;
+display:none;
+
+overflow:hidden;
+}
+#room {
+position:absolute;
+background:url(img/floor.png) repeat 0 0;
+}
+#player {
+position: absolute;
+transform-origin:50% 100%;
+-ms-transform-origin:50% 100%;; /* IE 9 */
+-webkit-transform-origin:50% 100%;; /* Safari and Chrome */
+-moz-transform-origin:50% 100%;; /* Firefox */
+-o-transform-origin:50% 100%;; /* Opera */ 
+}
+#player img {
+width:100%;
+}
+#roomRotator {
+position:absolute;
+overflow:hidden;
+
+
+}
+#roomObjects {
+position:absolute;
+}
+#intro, #success {
+margin:0 auto;
+width:30em;
+}
+#success {
+	display:none;
+}
+#success p {
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div id="intro">
+<h1>Gin monster Bob</h1>
+<p>Bob has got home sozzled, late on the weekend, but he's losing his buzz; 
+he wants it back before he hits the sack. But the only drink in the house is stinky old gin and 
+it's his housemates. You must help Bob navigate his way past his sleeping housemate and
+avoid tripping over his stuff. 
+</p>
+<p>Game by <a href="https://twitter.com/JimmyNoShoes">Patrick Woodcock</a> for <a href="http://www.ludumdare.com/compo/">Ludum Dare 25</a>.</p>
+<p>CONTROLS -<br/>
+Left/Right arrow key - Balance Bob so he's walking upright.<br/>
+Up/Down - Walk down towards the kitchen
+</p>
+<p>SELECT DIFFICULTY -<br/>
+<a href="javascript:go(1)">Tipsy (easiest)</a></br/>
+<a href="javascript:go(2)">Merry</a></br/>
+<a href="javascript:go(3)">Fuddled</a></br/>
+<a href="javascript:go(4)">Soused</a></br/>
+<a href="javascript:go(5)">Blotted</a></br/>
+<a href="javascript:go(6)">Paralytic (hardest)</a></br/>
+
+</div>
+<div id="game">
+<div id="player" 
+	style="">
+	<img src="img/player0.png" class="frame0"/>
+	<img src="img/player1.png" class="frame1"/>
+	<img src="img/player2.png" class="frame2"/>
+</div>
+<div id="roomRotator">
+
+<div id="room">
+<div id="roomObjects">
+</div>
+</div>
+
+</div>
+</div>
+<div id="success">
+<p><img src="img/success.png"/></p>
+<p>Hooray! You made it and stole your housemate's booze, you monster. Your punishment will be a horrible gin hangover.</p>
+<p><a href="javascript:restart();">Have another go.</a></p>
+</div>
+<script type="text/javascript">
+	</script>
+	<div style="display:none;">
+	<img src="img/sofa.png"/>
+	<img src="img/tv.png"/>
+	<img src="img/vase.png"/>
+	<img src="img/person.png"/>
+	<img src="img/sofa.png"/>
+	</div>
+</body>
+</html>
